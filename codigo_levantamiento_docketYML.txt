@@ -1,0 +1,172 @@
+
+PS C:\Users\Usuario\Documents\Tendencias-tecnologicas-MarcoG> cd .\microservicios-app\
+PS C:\Users\Usuario\Documents\Tendencias-tecnologicas-MarcoG\microservicios-app> docker-compose build
+time="2025-07-24T17:48:56-05:00" level=warning msg="C:\\Users\\Usuario\\Documents\\Tendencias-tecnologicas-MarcoG\\microservicios-app\\docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+Compose can now delegate builds to bake for better performance.
+ To do so, set COMPOSE_BAKE=true.
+error during connect: Head "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/_ping": open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.
+PS C:\Users\Usuario\Documents\Tendencias-tecnologicas-MarcoG\microservicios-app> docker version
+Client:
+ Version:           28.0.4
+ API version:       1.48
+ Go version:        go1.23.7
+ Git commit:        b8034c0
+ Built:             Tue Mar 25 15:07:48 2025
+ OS/Arch:           windows/amd64
+ Context:           desktop-linux
+
+Server: Docker Desktop 4.40.0 (187762)
+ Engine:
+  Version:          28.0.4
+  API version:      1.48 (minimum version 1.24)
+  Go version:       go1.23.7
+  Git commit:       6430e49
+  Built:            Tue Mar 25 15:07:22 2025
+  OS/Arch:          linux/amd64
+  Experimental:     false
+ containerd:
+  Version:          1.7.26
+  GitCommit:        753481ec61c7c8955a23d6ff7bc8e4daed455734
+ runc:
+  Version:          1.2.5
+  GitCommit:        v1.2.5-0-g59923ef
+ docker-init:
+  Version:          0.19.0
+  GitCommit:        de40ad0
+PS C:\Users\Usuario\Documents\Tendencias-tecnologicas-MarcoG\microservicios-app> wsl --list --verbose
+  NAME              STATE           VERSION
+* Ubuntu            Running         2
+  docker-desktop    Running         2
+PS C:\Users\Usuario\Documents\Tendencias-tecnologicas-MarcoG\microservicios-app> docker-compose build
+time="2025-07-24T17:51:42-05:00" level=warning msg="C:\\Users\\Usuario\\Documents\\Tendencias-tecnologicas-MarcoG\\microservicios-app\\docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+Compose can now delegate builds to bake for better performance.
+ To do so, set COMPOSE_BAKE=true.
+[+] Building 55.8s (39/39) FINISHED                                                                docker:desktop-linux
+ => [discovery-service internal] load build definition from Dockerfile                                             0.1s
+ => => transferring dockerfile: 174B                                                                               0.0s
+ => [owner-service internal] load metadata for docker.io/library/openjdk:17-jdk-alpine                             5.7s
+ => [discovery-service internal] load .dockerignore                                                                0.0s
+ => => transferring context: 2B                                                                                    0.0s
+ => [discovery-service internal] load build context                                                                3.3s
+ => => transferring context: 63.40MB                                                                               3.3s
+ => CACHED [owner-service 1/2] FROM docker.io/library/openjdk:17-jdk-alpine@sha256:4b6abae565492dbe9e7a894137c96  19.8s
+ => => resolve docker.io/library/openjdk:17-jdk-alpine@sha256:4b6abae565492dbe9e7a894137c966a7485154238902f2f25e9  0.1s
+ => => sha256:d8d715783b80cab158f5bf9726bcada5265c1624b64ca2bb46f42f94998d4662 186.80MB / 186.80MB                18.0s
+ => => sha256:53c9466125e464fed5626bde7b7a0f91aab09905f0a07e9ad4e930ae72e0fc63 928.44kB / 928.44kB                 0.9s
+ => => sha256:5843afab387455b37944e709ee8c78d7520df80f8d01cf7f861aae63beeddb6b 2.81MB / 2.81MB                     1.7s
+ => => extracting sha256:5843afab387455b37944e709ee8c78d7520df80f8d01cf7f861aae63beeddb6b                          0.1s
+ => => extracting sha256:53c9466125e464fed5626bde7b7a0f91aab09905f0a07e9ad4e930ae72e0fc63                          0.1s
+ => => extracting sha256:d8d715783b80cab158f5bf9726bcada5265c1624b64ca2bb46f42f94998d4662                          1.6s
+ => [discovery-service 2/2] COPY target/*.jar app.jar                                                              0.3s
+ => [discovery-service] exporting to image                                                                         3.0s
+ => => exporting layers                                                                                            2.5s
+ => => exporting manifest sha256:10479570438a7da195e330176d0b2b195a91080cdb2ff4b791b8928dc9a55bc1                  0.0s
+ => => exporting config sha256:29561c1d694094e7643a21388040d0d69d98c9037d5fbe5f4861b8ca7ac2abab                    0.0s
+ => => exporting attestation manifest sha256:c81aaac07133b7a0249644caf290d981c7b0770d2e83327370a097b3b21dd571      0.0s
+ => => exporting manifest list sha256:2ca948f356d18f4835c168992b1ed5cb8cf91d01d65282488a1ebb34b077888c             0.0s
+ => => naming to docker.io/library/microservicios-app-discovery-service:latest                                     0.0s
+ => => unpacking to docker.io/library/microservicios-app-discovery-service:latest                                  0.4s
+ => [discovery-service] resolving provenance for metadata file                                                     0.0s
+ => [api-gateway internal] load build definition from Dockerfile                                                   0.1s
+ => => transferring dockerfile: 174B                                                                               0.0s
+ => [pet-service internal] load build definition from Dockerfile                                                   0.1s
+ => => transferring dockerfile: 174B                                                                               0.0s
+ => [owner-service internal] load build definition from Dockerfile                                                 0.1s
+ => => transferring dockerfile: 174B                                                                               0.0s
+ => [pet-service internal] load .dockerignore                                                                      0.1s
+ => => transferring context: 2B                                                                                    0.0s
+ => [api-gateway internal] load .dockerignore                                                                      0.1s
+ => => transferring context: 2B                                                                                    0.0s
+ => [owner-service internal] load .dockerignore                                                                    0.1s
+ => => transferring context: 2B                                                                                    0.0s
+ => [owner-service internal] load build context                                                                    8.7s
+ => => transferring context: 81.89MB                                                                               7.4s
+ => [pet-service internal] load build context                                                                      7.1s
+ => => transferring context: 81.89MB                                                                               6.9s
+ => [api-gateway internal] load build context                                                                      5.3s
+ => => transferring context: 55.02MB                                                                               5.3s
+ => [api-gateway 2/2] COPY target/*.jar app.jar                                                                    0.2s
+ => [api-gateway] exporting to image                                                                               6.0s
+ => => exporting layers                                                                                            5.4s
+ => => exporting manifest sha256:53d8c1d831cc59987c775576673b6f6f47c8b1bfcf8472ef3cd1a7dd7c76167c                  0.0s
+ => => exporting config sha256:f37d8f4c2035b50f401310ff19e29fe5071450903a7bc31c9fc0cbc9d4a7bd25                    0.0s
+ => => exporting attestation manifest sha256:d2a284bc5a019ac4113a6ebdb3591cd902be4d8df4cdf5fa8f0daaa11752de61      0.0s
+ => => exporting manifest list sha256:380e44b656721639b4c3548db8ef904b6df3a333723e1a596e8cba7488915db8             0.0s
+ => => naming to docker.io/library/microservicios-app-api-gateway:latest                                           0.0s
+ => => unpacking to docker.io/library/microservicios-app-api-gateway:latest                                        0.3s
+ => [pet-service 2/2] COPY target/*.jar app.jar                                                                    2.4s
+ => [owner-service 2/2] COPY target/*.jar app.jar                                                                  1.7s
+ => [pet-service] exporting to image                                                                               5.3s
+ => => exporting layers                                                                                            4.5s
+ => => exporting manifest sha256:38e06f4d9d95082c63809c3e9f0a7147cae606d408fa4625d9c3bd70fc5836d8                  0.0s
+ => => exporting config sha256:0849158993437a234dd7ececd58d632a571e981af4c6a008c17b2af4234c2d7b                    0.0s
+ => => exporting attestation manifest sha256:519c66083be3a9fac73a0453f23657d47eac2efaf41eab14d993f8c61112ac9f      0.1s
+ => => exporting manifest list sha256:b7149e338aff2a8083994f2efa16c75a43946c0c40eab044ca52c2b9faf53d3d             0.0s
+ => => naming to docker.io/library/microservicios-app-pet-service:latest                                           0.0s
+ => => unpacking to docker.io/library/microservicios-app-pet-service:latest                                        0.6s
+ => [owner-service] exporting to image                                                                             4.0s
+ => => exporting layers                                                                                            3.3s
+ => => exporting manifest sha256:0de7e55b88d4d7d9f5f395152cc4c640c8287a81a70ed8f633515716ac842063                  0.0s
+ => => exporting config sha256:ec6a10f37071ba740c850b268174ecfd3efd163cf589c7109828f1dfb694895d                    0.0s
+ => => exporting attestation manifest sha256:26583010deacc785add8d617eda1cd729abf2c26b0a991e52b71de312fb39f33      0.0s
+ => => exporting manifest list sha256:c4895e04156b5e1b104a0fc7094a6ed5be5ec531c9e276916a2ee038e8e8ca30             0.0s
+ => => naming to docker.io/library/microservicios-app-owner-service:latest                                         0.0s
+ => => unpacking to docker.io/library/microservicios-app-owner-service:latest                                      0.6s
+ => [api-gateway] resolving provenance for metadata file                                                           0.0s
+ => [frontend internal] load build definition from Dockerfile                                                      0.0s
+ => => transferring dockerfile: 260B                                                                               0.0s
+ => [frontend internal] load metadata for docker.io/library/nginx:alpine                                           1.6s
+ => [frontend internal] load metadata for docker.io/library/node:18-alpine                                         1.6s
+ => [frontend internal] load .dockerignore                                                                         0.0s
+ => => transferring context: 2B                                                                                    0.0s
+ => [frontend build 1/4] FROM docker.io/library/node:18-alpine@sha256:8d6421d663b4c28fd3ebc498332f249011d11894558  7.8s
+ => => resolve docker.io/library/node:18-alpine@sha256:8d6421d663b4c28fd3ebc498332f249011d118945588d0a35cb9bc4b8c  0.0s
+ => => sha256:25ff2da83641908f65c3a74d80409d6b1b62ccfaab220b9ea70b80df5a2e0549 446B / 446B                         0.3s
+ => => sha256:1e5a4c89cee5c0826c540ab06d4b6b491c96eda01837f430bd47f0d26702d6e3 1.26MB / 1.26MB                     0.8s
+ => => sha256:dd71dde834b5c203d162902e6b8994cb2309ae049a0eabc4efea161b2b5a3d0e 40.01MB / 40.01MB                   6.6s
+ => => sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870 3.64MB / 3.64MB                     1.6s
+ => => extracting sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870                          0.1s
+ => => extracting sha256:dd71dde834b5c203d162902e6b8994cb2309ae049a0eabc4efea161b2b5a3d0e                          0.9s
+ => => extracting sha256:1e5a4c89cee5c0826c540ab06d4b6b491c96eda01837f430bd47f0d26702d6e3                          0.0s
+ => => extracting sha256:25ff2da83641908f65c3a74d80409d6b1b62ccfaab220b9ea70b80df5a2e0549                          0.0s
+ => [frontend stage-1 1/2] FROM docker.io/library/nginx:alpine@sha256:d67ea0d64d518b1bb04acde3b00f722ac3e9764b320  6.0s
+ => => resolve docker.io/library/nginx:alpine@sha256:d67ea0d64d518b1bb04acde3b00f722ac3e9764b3209a9b0a98924ba35e4  0.0s
+ => => sha256:f23865b38cc69ad61d7a272610d411a4e66c2ed6ab2f374ff8e7f947ecfffb28 16.78MB / 16.78MB                   3.4s
+ => => sha256:bdaad27fd04a102fe15f473a31a82321c0625a6a3603bd9522bf058eb8a194e2 1.40kB / 1.40kB                     0.8s
+ => => sha256:828fa206d77bc99972844d67b1a617a841c74f15e71c71e656d1437bd26c15b8 1.21kB / 1.21kB                     0.3s
+ => => sha256:c1d2dc189e3831ffcb9a19138df97d141f3bd13a13a1513b137cc7ca6e94fa09 405B / 405B                         0.6s
+ => => sha256:958a74d6a238e799e7819c7408602b9c5481fa5eda0ee5bcbe1932f685d9d3b9 956B / 956B                         0.6s
+ => => sha256:fd372c3c84a23422bc07489867f8c2e7e99774680380ccf89c0a269b71b5690f 628B / 628B                         0.6s
+ => => sha256:a5585638209eba93a3af07035d353e512187e9884e402ded45565e264bedb7e1 1.81MB / 1.81MB                     1.7s
+ => => sha256:9824c27679d3b27c5e1cb00a73adb6f4f8d556994111c12db3c5d61a0c843df8 3.80MB / 3.80MB                     2.2s
+ => => extracting sha256:9824c27679d3b27c5e1cb00a73adb6f4f8d556994111c12db3c5d61a0c843df8                          0.1s
+ => => extracting sha256:a5585638209eba93a3af07035d353e512187e9884e402ded45565e264bedb7e1                          0.1s
+ => => extracting sha256:fd372c3c84a23422bc07489867f8c2e7e99774680380ccf89c0a269b71b5690f                          0.0s
+ => => extracting sha256:958a74d6a238e799e7819c7408602b9c5481fa5eda0ee5bcbe1932f685d9d3b9                          0.0s
+ => => extracting sha256:c1d2dc189e3831ffcb9a19138df97d141f3bd13a13a1513b137cc7ca6e94fa09                          0.0s
+ => => extracting sha256:828fa206d77bc99972844d67b1a617a841c74f15e71c71e656d1437bd26c15b8                          0.0s
+ => => extracting sha256:bdaad27fd04a102fe15f473a31a82321c0625a6a3603bd9522bf058eb8a194e2                          0.0s
+ => => extracting sha256:f23865b38cc69ad61d7a272610d411a4e66c2ed6ab2f374ff8e7f947ecfffb28                          0.4s
+ => [frontend internal] load build context                                                                         6.0s
+ => => transferring context: 55.32MB                                                                               5.9s
+ => [pet-service] resolving provenance for metadata file                                                           0.1s
+ => [owner-service] resolving provenance for metadata file                                                         0.0s
+ => [frontend build 2/4] WORKDIR /app                                                                              0.2s
+ => [frontend build 3/4] COPY . .                                                                                  0.4s
+ => [frontend build 4/4] RUN npm install && npm run build                                                          3.5s
+ => [frontend stage-1 2/2] COPY --from=build /app/dist /usr/share/nginx/html                                       0.0s
+ => [frontend] exporting to image                                                                                  0.3s
+ => => exporting layers                                                                                            0.1s
+ => => exporting manifest sha256:22e4dfad167daf20a0722ffd7759bc3ae637bbae80942f8a1593739740944338                  0.0s
+ => => exporting config sha256:b4af8aad718be14f1475e4343b51e9c84f35c639ef544ff166848dd23130a02d                    0.0s
+ => => exporting attestation manifest sha256:da78980f1c5db50391c39b165f5f34025a725dff160306b12da77bd688d34ef2      0.0s
+ => => exporting manifest list sha256:20ff1fcb7344d472c7b267a283d1c4db1a253d4e15834000fa2ba7dbad32ebe1             0.0s
+ => => naming to docker.io/library/microservicios-app-frontend:latest                                              0.0s
+ => => unpacking to docker.io/library/microservicios-app-frontend:latest                                           0.0s
+ => [frontend] resolving provenance for metadata file                                                              0.0s
+[+] Building 5/5
+ ✔ api-gateway        Built                                                                                        0.0s
+ ✔ discovery-service  Built                                                                                        0.0s
+ ✔ frontend           Built                                                                                        0.0s
+ ✔ owner-service      Built                                                                                        0.0s
+ ✔ pet-service        Built                                                                                        0.0s
